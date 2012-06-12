@@ -1,6 +1,6 @@
 #include "includes/mainwindow.h"
 #include "includes/ui_mainwindow.h"
-#include "includes/fileaction.h"
+#include "includes/fileactionthread.h"
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QString>
@@ -35,8 +35,8 @@ MainWindow::~MainWindow()
 void MainWindow::openDirectoryButtonClicked()
 {
     // Opens a dialog for selecting the file
-    file = QFileDialog::getOpenFileName(this, tr("Valitse lähtölistatiedosto"), "", tr("Text Documents (*.txt)"));
-    ui->filenameField->setText(file);
+    filePath = QFileDialog::getOpenFileName(this, tr("Valitse lähtölistatiedosto"), "", tr("Text Documents (*.txt)"));
+    ui->filenameField->setText(filePath);
 }
 
 /*
@@ -44,10 +44,15 @@ void MainWindow::openDirectoryButtonClicked()
  */
 void MainWindow::openFileButtonClicked()
 {
-    if (file != "")
+    if (filePath != "")
     {
-        FileAction fileAction(file);
-        fileAction.openToRead();
+        // Create a thread for file I/O
+        FileActionThread fileThread;
+        fileThread.setFilePath(filePath);
+        fileThread.start();
+
+        //FileAction fileAction(file);
+        //fileAction.openToRead();
     }
     else
     {

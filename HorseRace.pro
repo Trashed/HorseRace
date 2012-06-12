@@ -13,10 +13,12 @@ TEMPLATE = app
 SOURCES += sources/main.cpp\
         sources/mainwindow.cpp \
     sources/fileaction.cpp \
-    sources/thread.cpp
+    sources/fileactionthread.cpp \
+    sources/parser.cpp
 
 HEADERS  += includes/mainwindow.h \
     includes/fileaction.h \
-    includes/thread.h
+    includes/fileactionthread.h \
+    includes/parser.h
 
 FORMS    += ui/mainwindow.ui

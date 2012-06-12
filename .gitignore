@@ -1,0 +1,18 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Qt generated files #
+##################
+debug/
+release/
+HorseRace.pro.user
+Makefile
+Makefile.Debug
+Makefile.Release
+Raviohjelma.pro.user
