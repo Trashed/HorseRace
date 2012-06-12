@@ -1,3 +1,9 @@
+//
+// MainWindow.h
+//
+// Declaration of the application's main view.
+//
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

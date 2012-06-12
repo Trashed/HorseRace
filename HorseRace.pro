@@ -12,9 +12,11 @@ TEMPLATE = app
 
 SOURCES += sources/main.cpp\
         sources/mainwindow.cpp \
-    sources/fileaction.cpp
+    sources/fileaction.cpp \
+    sources/thread.cpp
 
 HEADERS  += includes/mainwindow.h \
-    includes/fileaction.h
+    includes/fileaction.h \
+    includes/thread.h
 
 FORMS    += ui/mainwindow.ui

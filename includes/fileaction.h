@@ -1,3 +1,9 @@
+//
+// FileAction.h
+//
+// This class handles file I/O actions.
+//
+
 #ifndef FILEACTION_H
 #define FILEACTION_H
 

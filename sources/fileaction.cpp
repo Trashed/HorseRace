@@ -32,7 +32,9 @@ FileAction::~FileAction()
  */
 void FileAction::openToRead()
 {
-    QFile mFile(filename);
+    // TODO: Paremmin hallittu funktio tänne.
+
+    /*QFile mFile(filename);
 
     if (mFile.open(QIODevice::ReadOnly))
     {
@@ -72,5 +74,5 @@ void FileAction::openToRead()
         QMessageBox msg;
         msg.setInformativeText("Tiedostoa ei voitu avata");
         msg.exec();
-    }
+    }*/
 }
