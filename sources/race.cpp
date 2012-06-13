@@ -1,9 +1,9 @@
-#include "includes/parser.h"
+#include "includes/race.h"
 
 /*
  * Default constructor
  */
-Parser::Parser()
+Race::Race()
 {
     // ...
 }
@@ -11,7 +11,7 @@ Parser::Parser()
 /*
  * Destructor
  */
-Parser::~Parser()
+Race::~Race()
 {
     // ...
 }

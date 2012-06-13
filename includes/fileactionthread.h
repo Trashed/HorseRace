@@ -1,7 +1,7 @@
 //
 // FileActionThread.h
 //
-// This class handles threads.
+// This class handles file I/O thread.
 //
 
 #ifndef FILEACTIONTHREAD_H
@@ -16,16 +16,14 @@ class FileActionThread : public QThread
     Q_OBJECT
 
 public:
-    FileActionThread(QObject *parent = 0);
+    FileActionThread(QObject *parent = 0, QString filePath = 0);
     ~FileActionThread();
-
-    void setFilePath(QString filePath_);
 
 protected:
     void run();
 
 private:
-    FileAction *fileAction;
+    FileAction _fileAction;
 };
 
 #endif // FILEACTIONTHREAD_H

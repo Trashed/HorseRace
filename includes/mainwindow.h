@@ -30,6 +30,9 @@ private:
     Ui::MainWindow *ui;
 
     QString filePath;
+
+    // TODO: Is this the right class to place Horse and Race objects at??
+
 };
 
 #endif // MAINWINDOW_H

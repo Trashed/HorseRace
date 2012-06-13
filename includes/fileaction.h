@@ -7,9 +7,12 @@
 #ifndef FILEACTION_H
 #define FILEACTION_H
 
+#include <QMessageBox>
+#include <QTextStream>
 #include <QFile>
 #include <QString>
 #include <QTextEdit>
+#include <QDebug>
 
 #include "includes/mainwindow.h"
 
@@ -21,6 +24,8 @@ public:
     ~FileAction();  // Destructor
 
     void openToRead();
+
+    bool isNull();
 protected:
 
 private:

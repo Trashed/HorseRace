@@ -14,11 +14,15 @@ SOURCES += sources/main.cpp\
         sources/mainwindow.cpp \
     sources/fileaction.cpp \
     sources/fileactionthread.cpp \
-    sources/parser.cpp
+    sources/parser.cpp \
+    sources/horse.cpp \
+    sources/race.cpp
 
 HEADERS  += includes/mainwindow.h \
     includes/fileaction.h \
     includes/fileactionthread.h \
-    includes/parser.h
+    includes/parser.h \
+    includes/horse.h \
+    includes/race.h
 
 FORMS    += ui/mainwindow.ui

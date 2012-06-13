@@ -1,6 +1,4 @@
 #include "includes/fileaction.h"
-#include <QMessageBox>
-#include <QTextStream>
 
 /*
  * Default constructor
@@ -32,47 +30,35 @@ FileAction::~FileAction()
  */
 void FileAction::openToRead()
 {
-    // TODO: Paremmin hallittu funktio tänne.
-
-    /*QFile mFile(filename);
-
-    if (mFile.open(QIODevice::ReadOnly))
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly))
     {
-        QFile *tempFile = new QFile("tempfile.txt");
-        tempFile->open(QIODevice::WriteOnly);
-
-        if (tempFile->isOpen())
-        {
-            QTextStream in(&mFile);
-            QString temp;
-            while (!mFile.atEnd())
-            {
-                temp = in.readLine();
-                if (!temp.contains("= Page 1 =", Qt::CaseInsensitive))
-                {
-                    tempFile->write(temp.toAscii() + '\n');
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
-        else
-        {
-            QMessageBox msg;
-            msg.setInformativeText("Tiedostoa " + tempFile->fileName() + "ei voitu avata");
-            msg.exec();
-        }
-
-        mFile.close();
-        tempFile->close();
-        delete tempFile;
+        qDebug() << "Didn't open the file " + filename;
+        return;
     }
-    else  // Notification appears if file fails to open
+    else
     {
-        QMessageBox msg;
-        msg.setInformativeText("Tiedostoa ei voitu avata");
-        msg.exec();
-    }*/
+        // TODO: Paremmin hallitut toiminnot tänne
+        while (!file.atEnd())
+        {
+            // TODO: tänne Parser ja toiminnot tietojen syöttämiseen
+            // Horse ja Race olioihin
+        }
+        qDebug() << "File " + filename + " opened succesfully";
+    }
+}
+
+/*
+ * Checks whether the FileAction object is null or not
+ */
+bool FileAction::isNull()
+{
+    if (this != NULL)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }

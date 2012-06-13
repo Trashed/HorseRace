@@ -46,13 +46,11 @@ void MainWindow::openFileButtonClicked()
 {
     if (filePath != "")
     {
-        // Create a thread for file I/O
-        FileActionThread fileThread;
-        fileThread.setFilePath(filePath);
+        // TODO: Add Horse and Race objects as a reference parameter to the Thread
+        // Create a thread for file I/O, set the filePath to
+        // be accessed and start the thread
+        FileActionThread fileThread(this, filePath);
         fileThread.start();
-
-        //FileAction fileAction(file);
-        //fileAction.openToRead();
     }
     else
     {
