@@ -1,5 +1,5 @@
 //
-// FileActionThread.h
+// fileactionthread.h
 //
 // This class handles file I/O thread.
 //

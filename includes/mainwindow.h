@@ -1,5 +1,5 @@
 //
-// MainWindow.h
+// mainwindow.h
 //
 // Declaration of the application's main view.
 //

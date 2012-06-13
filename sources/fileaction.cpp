@@ -38,13 +38,14 @@ void FileAction::openToRead()
     }
     else
     {
+        qDebug() << "File " + filename + " opened succesfully";
+
         // TODO: Paremmin hallitut toiminnot tänne
         while (!file.atEnd())
         {
             // TODO: tänne Parser ja toiminnot tietojen syöttämiseen
             // Horse ja Race olioihin
         }
-        qDebug() << "File " + filename + " opened succesfully";
     }
 }
 

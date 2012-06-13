@@ -1,5 +1,5 @@
 //
-// FileAction.h
+// fileaction.h
 //
 // This class handles file I/O actions.
 //

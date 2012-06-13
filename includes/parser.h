@@ -16,10 +16,18 @@ public:
     Parser();
     ~Parser();
 
+    /* TODO:
+     * - metodi rivin lukemiselle (koska peritty, voi k‰ytt‰‰ QTextStreamin readLine()-metodia??)
+     * -
+     */
+
 protected:
 
 private:
-
+    /* TODO:
+     * - QString-muuttuja luettavalle riville
+     * - metodi(t) rivien parsimista varten (palauttaa halutun (numeerisen?) arvon)
+     */
 };
 
 #endif // PARSER_H
