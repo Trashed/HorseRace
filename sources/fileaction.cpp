@@ -31,6 +31,7 @@ FileAction::~FileAction()
 void FileAction::openToRead()
 {
     QFile file(filename);
+    QTextStream stream(&file);
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Didn't open the file " + filename;
@@ -40,12 +41,19 @@ void FileAction::openToRead()
     {
         qDebug() << "File " + filename + " opened succesfully";
 
+        QString buffer;
         // TODO: Paremmin hallitut toiminnot tänne
         while (!file.atEnd())
         {
-            // TODO: tänne Parser ja toiminnot tietojen syöttämiseen
-            // Horse ja Race olioihin
+            static int index = 1;
+            buffer = stream.readLine();
+
+            // TODO: tähän uusi while-silmukka
+
+            buffer = "";
         }
+
+        file.close();
     }
 }
 

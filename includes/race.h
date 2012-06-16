@@ -17,6 +17,8 @@ class Race
 public:
     Race();
     ~Race();
+
+    void addHorse(Horse);
 private:
     QVector<Horse> horses;
 };

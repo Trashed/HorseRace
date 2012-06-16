@@ -12,9 +12,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);  // initialize ui
 
-    ui->filenameField->setText("Ei tiedostoa valittuna");
+
+
+    ui->filenameField->setText("Ei tiedostoa valittuna");  // set the default text to TextField
 
     // Program's connections
     connect(ui->openDirectoryButton, SIGNAL(clicked()), this, SLOT(openDirectoryButtonClicked()));
@@ -46,10 +48,12 @@ void MainWindow::openFileButtonClicked()
 {
     if (filePath != "")
     {
-        // TODO: Add Horse and Race objects as a reference parameter to the Thread
+
         // Create a thread for file I/O, set the filePath to
         // be accessed and start the thread
+        // TODO: Add Horse and Race objects as a reference parameter to the Thread
         FileActionThread fileThread(this, filePath);
+        fileThread.setRaceData(raceData);
         fileThread.start();
     }
     else

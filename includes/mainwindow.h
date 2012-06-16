@@ -7,8 +7,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "includes/race.h"
+
 #include <QMainWindow>
 #include <QString>
+#include <QVector>
 
 namespace Ui {
 class MainWindow;
@@ -31,7 +34,7 @@ private:
 
     QString filePath;
 
-    // TODO: Is this the right class to place Horse and Race objects at??
+    QVector<Race> raceData;
 
 };
 

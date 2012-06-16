@@ -3,10 +3,10 @@
 /*
  * Constructor of Thread
  */
-FileActionThread::FileActionThread(QObject *parent, QString filePath)
-    :QThread(parent), _fileAction(filePath)
+FileActionThread::FileActionThread(QObject *parent, QString _filename)
+    :QThread(parent)
 {
-
+     filename = _filename;
 }
 
 /*
@@ -24,9 +24,39 @@ FileActionThread::~FileActionThread()
  */
 void FileActionThread::run()
 {
-    // Actions to do in FileActionThread
-    if (!_fileAction.isNull())
+    QFile file(filename);
+    QTextStream stream(&file);
+    if (!file.open(QIODevice::ReadOnly))
     {
-        _fileAction.openToRead();
+        qDebug() << "Didn't open the file " + filename;
+        return;
+    }
+    else
+    {
+        qDebug() << "File " + filename + " opened succesfully";
+
+        QString strBuffer;
+        // TODO: Paremmin hallitut toiminnot tänne
+        while (!file.atEnd())
+        {
+            static int index = 1;
+            strBuffer = stream.readLine();
+
+            // TODO: tähän tarvittavat ehdot ja silmukat
+
+            strBuffer = "";
+        }
+
+        file.close();
+    }
+}
+
+void FileActionThread::setRaceData(QVector<Race> &_raceData)
+{
+    raceData = _raceData;
+
+    if (raceData.isEmpty())
+    {
+        qDebug() << "vector raceData is empty";
     }
 }

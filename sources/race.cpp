@@ -5,7 +5,7 @@
  */
 Race::Race()
 {
-    // ...
+
 }
 
 /*
@@ -14,4 +14,12 @@ Race::Race()
 Race::~Race()
 {
     // ...
+}
+
+/*
+ * Add a Horse object into a vector of Horses
+ */
+void Race::addHorse(Horse _horse)
+{
+    horses.append(_horse);
 }
