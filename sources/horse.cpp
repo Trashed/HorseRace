@@ -1,51 +1,39 @@
 #include "includes/horse.h"
 
-Horse::Horse()
-{
-    // ...
-}
-
 /*
  * Parameter constructor to set all the data that
  * the instance of Horse class needs.
  */
-Horse::Horse(int _number, QString _name, int _racesLS, int _racesTS,
-             int _ranksLS[], int _ranksTS[], int _moneyLS, int _moneyTS, int _ranksFLR[], int _elapsedTime[])
+Horse::Horse()
 {
-    int horseNumber              = _number;
-    QString name                 = _name;
-    int racesLastSeason          = _racesLS;
-    int racesThisSeason          = _racesTS;
-    // int rankingsLastSeason       = _ranksLS;  // array
+    horseNumber     = 0;
+    name            = "";
+    racesLastSeason = 0;
+    racesThisSeason = 0;
+    totalRaces      = 0;
 
-    for (unsigned int i = 0; i < sizeof(rankingsLastSeason); i++)
-    {
-        rankingsLastSeason[i] = _ranksLS[i];
-    }
+    rankingsLastSeason[0] = 0;
+    rankingsLastSeason[1] = 0;
+    rankingsLastSeason[2] = 0;
 
-    // int rankingsThisSeason       = _ranksTS;  // array
+    rankingsThisSeason[0] = 0;
+    rankingsThisSeason[1] = 0;
+    rankingsThisSeason[2] = 0;
 
-    for (unsigned int i = 0; i < sizeof(rankingsThisSeason); i++)
-    {
-        rankingsThisSeason[i] = _ranksTS[i];
-    }
+    earnedMoneyLastSeason = 0;
+    earnedMoneyThisSeason = 0;
 
-    int earnedMoneyLastSeason    = _moneyLS;
-    int earnedMoneyThisSeason    = _moneyTS;
-    // int rankingsFiveLastRaces    = _ranksFLR;  // array
+    rankingsFiveLastRaces[0] = 0;
+    rankingsFiveLastRaces[1] = 0;
+    rankingsFiveLastRaces[2] = 0;
+    rankingsFiveLastRaces[3] = 0;
+    rankingsFiveLastRaces[4] = 0;
 
-    for (unsigned int i = 0; i < sizeof(rankingsFiveLastRaces); i++)
-    {
-        rankingsFiveLastRaces[i] = _ranksFLR[i];
-    }
-
-    // int elapsedTimeFiveLastRaces = _elapsedTime;  // array
-
-    for (unsigned int i = 0; i < sizeof(elapsedTimeFiveLastRaces); i++)
-    {
-        elapsedTimeFiveLastRaces[i] = _elapsedTime[i];
-    }
-
+    elapsedTimeFiveLastRaces[0] = 0;
+    elapsedTimeFiveLastRaces[1] = 0;
+    elapsedTimeFiveLastRaces[2] = 0;
+    elapsedTimeFiveLastRaces[3] = 0;
+    elapsedTimeFiveLastRaces[4] = 0;
 }
 
 /*
@@ -55,3 +43,5 @@ Horse::~Horse()
 {
     // ...
 }
+
+

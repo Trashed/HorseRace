@@ -1,4 +1,5 @@
 #include "includes/fileactionthread.h"
+#include "includes/horse.h"
 
 /*
  * Constructor of Thread
@@ -26,6 +27,8 @@ void FileActionThread::run()
 {
     QFile file(filename);
     QTextStream stream(&file);
+    Horse horseBuffer;
+    Race raceBuffer;
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Didn't open the file " + filename;
@@ -36,11 +39,23 @@ void FileActionThread::run()
         qDebug() << "File " + filename + " opened succesfully";
 
         QString strBuffer;
-        // TODO: Paremmin hallitut toiminnot tänne
+        //Race raceBuffer;
+
         while (!file.atEnd())
         {
             static int index = 1;
             strBuffer = stream.readLine();
+
+            if (strBuffer == "")
+            {
+                qDebug() << "empty line";
+            }
+            else if (strBuffer.contains("Lähtö " + QString::number(index)))
+            {
+                qDebug() << "String exists: Lähtö "  + QString::number(index);
+                horseBuffer.setHorseNumber(index);
+                index++;
+            }
 
             // TODO: tähän tarvittavat ehdot ja silmukat
 

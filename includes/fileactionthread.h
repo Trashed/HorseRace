@@ -26,6 +26,7 @@ public:
     ~FileActionThread();
 
     void setRaceData(QVector<Race> &);
+
 protected:
     void run();
 
