@@ -1,7 +1,7 @@
 #include "includes/fileactionthread.h"
 #include "includes/horse.h"
 
-/*
+/**
  * Constructor of Thread
  */
 FileActionThread::FileActionThread(QObject *parent, QString _filename)
@@ -10,7 +10,7 @@ FileActionThread::FileActionThread(QObject *parent, QString _filename)
      filename = _filename;
 }
 
-/*
+/**
  * Destructor of class Thread
  */
 FileActionThread::~FileActionThread()
@@ -20,7 +20,7 @@ FileActionThread::~FileActionThread()
     wait();
 }
 
-/*
+/**
  * Run method. This is called automatically.
  */
 void FileActionThread::run()
@@ -43,21 +43,19 @@ void FileActionThread::run()
 
         while (!file.atEnd())
         {
-            static int index = 1;
             strBuffer = stream.readLine();
+
 
             if (strBuffer == "")
             {
                 qDebug() << "empty line";
             }
-            else if (strBuffer.contains("Lähtö " + QString::number(index)))
+            else
             {
-                qDebug() << "String exists: Lähtö "  + QString::number(index);
-                horseBuffer.setHorseNumber(index);
-                index++;
+                qDebug() << "Parser method called";
+                // TODO: TOISTAISEKSI arvopalautetaan strBufferiin
+                strBuffer = parser.parseDataFromStringBuffer(strBuffer);
             }
-
-            // TODO: tähän tarvittavat ehdot ja silmukat
 
             strBuffer = "";
         }
@@ -66,6 +64,12 @@ void FileActionThread::run()
     }
 }
 
+/**
+ * setRaceData
+ *
+ * Gets raceData (QVector) as a reference parameter. Thus, the data is automatically "copied"
+ * to the MainWindow raceData instance.
+ */
 void FileActionThread::setRaceData(QVector<Race> &_raceData)
 {
     raceData = _raceData;

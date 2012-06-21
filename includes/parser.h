@@ -10,7 +10,7 @@
 
 #include <QTextStream>
 
-class Parser : public QTextStream
+class Parser
 {
 public:
     Parser();
@@ -20,6 +20,7 @@ public:
      * - metodi rivin lukemiselle (koska peritty, voi k‰ytt‰‰ QTextStreamin readLine()-metodia??)
      * -
      */
+    QString parseDataFromStringBuffer(QString);
 
 protected:
 
